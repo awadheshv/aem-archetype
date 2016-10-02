@@ -1,0 +1,12 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/apps/${rootArtifactId}/components" />
+    <filter root="/apps/${rootArtifactId}/templates" />
+    <filter root="/apps/${rootArtifactId}/install/${symbol_dollar}{core.name}-${symbol_dollar}{project.parent.version}.jar" />
+    <filter root="/etc/designs/${rootArtifactId}">
+        <exclude pattern="/etc/designs/${rootArtifactId}/jcr:content(/.*)?"/>
+    </filter>
+</workspaceFilter>

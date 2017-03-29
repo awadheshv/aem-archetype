@@ -36,7 +36,7 @@
 
     <properties>
         <cq.package.group>${projectPrettyName}</cq.package.group>
-        <core.name>app-core</core.name>
+        <core.name>${rootArtifactId}-core</core.name>
         <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss.SSSZ</maven.build.timestamp.format>
         <timestamp>${maven.build.timestamp}</timestamp>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -179,6 +179,20 @@
                         <version>1.9.1</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
